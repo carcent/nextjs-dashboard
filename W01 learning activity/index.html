@@ -7,15 +7,18 @@
         <script type="text/jsx">
             //select the div element with 'app' id 
             const domNode = document.getElementById('app');
-            function Header() {
-                return <h1>Develop. Preview. Ship.</h1>;
+            function Header( {title} ) {
+                console.log(title);
+                return <h1>{title}</h1>;
             }
 
             function HomePage(){
-                return <div>
-                    {/* Nesting header component */}
-                    <Header />
-                </div>;
+                return (
+                    <div>
+                    <Header title="React" />
+                    <Header title="A new title" />
+                </div>
+                );
             }
             const root = ReactDOM.createRoot(domNode);
             root.render(<HomePage />);
